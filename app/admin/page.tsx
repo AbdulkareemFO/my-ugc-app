@@ -27,57 +27,59 @@ export default function AdminPage() {
  
  
   return (
-    <div className="min-h-screen bg-[#084c41] flex items-center justify-center p-6">
-
-        
-<div className="bg-white w-full rounded-xl shadow-lg p-6 md:p-8">
-                <div className="flex justify-center mb-6">
-          <Image
-            src="/logo.png"
-            alt="PwP Logo"
-            width={80}
-            height={80}
-          />
-        </div>
-        <h1 className="text-2xl font-bold text-center text-[#084c41] mb-6">
-          🛠️ Admin: Add Creator
-        </h1>
-        <form onSubmit={handleAddCreator}>
-          <label className="text-sm font-medium text-gray-700 block mb-1">Full Name</label>
-          <input
-            type="text"
-            placeholder="e.g. Layla Creator"
-            className="w-full p-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-[#f2c94c]"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <label className="text-sm font-medium text-gray-700 block mb-1">Phone</label>
-          <input
-            type="text"
-            placeholder="e.g. 0501234567"
-            className="w-full p-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-[#f2c94c]"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <button
-            type="submit"
-            className="w-full bg-[#f2c94c] text-[#084c41] font-semibold py-3 rounded hover:bg-[#e6b93f] transition"
-          >
-            ➕ Add Creator
-          </button>
-        </form>
-        {status && (
-          <p className={`mt-4 text-sm ${status.startsWith('✅') ? 'text-green-600' : 'text-red-600'}`}>
-            {status}
-          </p>
-        )}
+    <div className="min-h-screen bg-[#084c41] flex flex-col md:flex-row items-center justify-center gap-6 p-6">
+    {/* Add Creator */}
+    <div className="bg-white w-full max-w-md rounded-xl shadow-lg p-6 md:p-8">
+      <div className="flex justify-center mb-6">
+        <Image
+          src="/logo.png"
+          alt="PwP Logo"
+          width={80}
+          height={80}
+        />
       </div>
-       {/* Edit Creator */}
-       <CreatorEditor />
+      <h1 className="text-2xl font-bold text-center text-[#084c41] mb-6">
+        🛠️ Admin: Add Creator
+      </h1>
+      <form onSubmit={handleAddCreator}>
+        <label className="text-sm font-medium text-gray-700 block mb-1">Full Name</label>
+        <input
+          type="text"
+          placeholder="e.g. Layla Creator"
+          className="w-full p-3 border border-gray-300 rounded mb-4 text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#f2c94c]"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <label className="text-sm font-medium text-gray-700 block mb-1">Phone</label>
+        <input
+          type="text"
+          placeholder="e.g. 0501234567"
+          className="w-full p-3 border border-gray-300 rounded mb-4 text-black placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#f2c94c]"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          required
+        />
+        <button
+          type="submit"
+          className="w-full bg-[#f2c94c] text-[#084c41] font-semibold py-3 rounded hover:bg-[#e6b93f] transition"
+        >
+          ➕ Add Creator
+        </button>
+      </form>
+      {status && (
+        <p className={`mt-4 text-sm ${status.startsWith('✅') ? 'text-green-600' : 'text-red-600'}`}>
+          {status}
+        </p>
+      )}
     </div>
-  )
+
+    {/* Edit Creator */}
+    <div className="w-full max-w-md">
+      <CreatorEditor />
+    </div>
+  </div>
+)
 }
 
 

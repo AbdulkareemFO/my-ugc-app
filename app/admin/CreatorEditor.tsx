@@ -33,6 +33,8 @@ export default function CreatorEditor() {
   const handleUpdate = async (e: React.FormEvent) => {
     e.preventDefault()
 
+    setStatus(null)
+
     console.log('🛠 Updating creator:', selectedId, {
       video_count: videoCount,
       total_earnings: earnings
@@ -57,20 +59,22 @@ export default function CreatorEditor() {
       <h2 className="text-xl font-semibold mb-6 text-[#084c41]">✏️ Update Creator Info</h2>
 
       <form onSubmit={handleUpdate}>
-        <label className="block mb-2 text-sm font-medium text-gray-700">Select Creator</label>
-        <select
-          className="w-full p-2 border border-gray-300 rounded mb-4"
-          value={selectedId}
-          onChange={handleSelect}
-          required
-        >
-          <option value="" disabled>Select a creator</option>
-          {creators.map(creator => (
-            <option key={creator.id} value={creator.id}>
-              {creator.full_name || creator.email}
-            </option>
-          ))}
-        </select>
+       <div className="relative z-10">
+  <label className="block mb-2 text-sm font-medium text-gray-700">Select Creator</label>
+  <select
+    className="w-full p-2 border border-gray-300 rounded mb-4 text-black placeholder:text-gray-500"
+    value={selectedId}
+    onChange={handleSelect}
+    required
+  >
+    <option value="" disabled>Select a creator</option>
+    {creators.map(creator => (
+      <option key={creator.id} value={creator.id}>
+        {creator.full_name || creator.email}
+      </option>
+    ))}
+  </select>
+</div>
 
         <label className="block text-sm text-gray-600">🎥 Videos Completed</label>
         <input

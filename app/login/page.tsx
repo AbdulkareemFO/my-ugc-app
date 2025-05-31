@@ -41,22 +41,22 @@ export default function LoginPage() {
         <form onSubmit={handleLogin}>
           <label className="block mb-1 text-sm font-medium text-gray-700">Phone Number</label>
           <input
-            type="text"
-            placeholder="e.g. 0501234567"
-            className="w-full p-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-[#f2c94c]"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            required
-          />
-          <label className="block mb-1 text-sm font-medium text-gray-700">Password</label>
-          <input
-            type="password"
-            placeholder="Your password"
-            className="w-full p-3 border border-gray-300 rounded mb-6 focus:outline-none focus:ring-2 focus:ring-[#f2c94c]"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+  type="text"
+  placeholder="e.g. 0501234567"
+  className="w-full p-3 border border-gray-300 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-[#f2c94c] text-black placeholder:text-grey-500"
+  value={phone}
+  onChange={(e) => setPhone(e.target.value)}
+  required
+/>
+
+<input
+  type="password"
+  placeholder="Your password"
+  className="w-full p-3 border border-gray-300 rounded mb-6 focus:outline-none focus:ring-2 focus:ring-[#f2c94c] text-black placeholder:text-grey-500"
+  value={password}
+  onChange={(e) => setPassword(e.target.value)}
+  required
+/>
           <button
             type="submit"
             className="w-full bg-[#f2c94c] text-[#084c41] font-semibold py-3 rounded hover:bg-[#e6b93f] transition"
