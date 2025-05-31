@@ -36,7 +36,7 @@ export default function LoginPage() {
           <Image src="/logo.png" alt="PwP Logo" width={80} height={80} />
         </div>
         <h1 className="text-2xl font-bold text-center text-[#084c41] mb-6">
-          📲 Login to PwP
+          📲 Login to PwP Creators Portal
         </h1>
         <form onSubmit={handleLogin}>
           <label className="block mb-1 text-sm font-medium text-gray-700">Phone Number</label>
